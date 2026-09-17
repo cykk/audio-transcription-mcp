@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audiototext-mcp"
+version = "0.1.0"
+description = "MCP server for audio and video transcription with audiototext."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+  "mcp>=1.0.0,<2",
+  "cykk-audio-transcriber>=0.1.2",
+]
+
+[project.optional-dependencies]
+local = ["cykk-audio-transcriber[local]>=0.1.2"]
+api = ["cykk-audio-transcriber[api]>=0.1.2"]
+all = ["cykk-audio-transcriber[all]>=0.1.2"]
+
+[project.urls]
+Homepage = "https://github.com/cykk/audiototext-mcp"
+Repository = "https://github.com/cykk/audiototext-mcp"
+Issues = "https://github.com/cykk/audiototext-mcp/issues"
+
+[project.scripts]
+audiototext-mcp = "audiototext_mcp.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
