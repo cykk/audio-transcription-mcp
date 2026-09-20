@@ -14,7 +14,6 @@ keywords = ["mcp", "transcription", "speech-to-text", "whisper", "audio", "video
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.11",
-  "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Topic :: Multimedia :: Sound/Audio :: Speech",
 ]
@@ -29,9 +28,9 @@ api = ["cykk-audio-transcriber[api]>=0.1.2"]
 all = ["cykk-audio-transcriber[all]>=0.1.2"]
 
 [project.urls]
-Homepage = "https://github.com/cykk/audiototext-mcp"
-Repository = "https://github.com/cykk/audiototext-mcp"
-Issues = "https://github.com/cykk/audiototext-mcp/issues"
+Homepage = "https://github.com/cykk/audio-transcription-mcp"
+Repository = "https://github.com/cykk/audio-transcription-mcp"
+Issues = "https://github.com/cykk/audio-transcription-mcp/issues"
 
 [project.scripts]
 audio-transcription-mcp = "audiototext_mcp.server:main"
