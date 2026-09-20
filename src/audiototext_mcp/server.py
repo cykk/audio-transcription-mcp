@@ -12,7 +12,7 @@ from audiototext.audio import ensure_ffmpeg
 from audiototext.config import CliConfig
 from audiototext.providers import local_whisper, openai_api
 
-mcp = FastMCP("audiototext")
+mcp = FastMCP("audio-transcription")
 
 
 @mcp.tool()

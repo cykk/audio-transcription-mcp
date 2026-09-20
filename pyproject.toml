@@ -3,13 +3,21 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "audiototext-mcp"
+name = "audio-transcription-mcp"
 version = "0.1.0"
-description = "MCP server for audio and video transcription with audiototext."
+description = "MCP server for audio and video transcription with local Whisper or the OpenAI API."
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE"]
+keywords = ["mcp", "transcription", "speech-to-text", "whisper", "audio", "video"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
+]
 dependencies = [
   "mcp>=1.0.0,<2",
   "cykk-audio-transcriber>=0.1.2",
@@ -26,6 +34,8 @@ Repository = "https://github.com/cykk/audiototext-mcp"
 Issues = "https://github.com/cykk/audiototext-mcp/issues"
 
 [project.scripts]
+audio-transcription-mcp = "audiototext_mcp.server:main"
+# Backward-compatible alias for existing installations and MCP client configs.
 audiototext-mcp = "audiototext_mcp.server:main"
 
 [tool.setuptools]

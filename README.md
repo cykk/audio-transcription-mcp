@@ -1,6 +1,8 @@
-# audiototext-mcp
+# Audio & Video Transcription MCP
 
-An [MCP](https://modelcontextprotocol.io/) server that exposes local audio and video transcription through the `audiototext` engine.
+An [MCP](https://modelcontextprotocol.io/) server for local audio and video transcription with local Whisper or the OpenAI transcription API.
+
+Package and CLI name: `audio-transcription-mcp`.
 
 ## Requirements
 
@@ -9,31 +11,49 @@ An [MCP](https://modelcontextprotocol.io/) server that exposes local audio and v
 - For local transcription: install the `local` extra of `cykk-audio-transcriber`
 - For OpenAI transcription: install the `api` extra and set `OPENAI_API_KEY`
 
-## Install
+## Install from source
 
 ```bash
-pip install "audiototext-mcp[local]"
+git clone https://github.com/cykk/audiototext-mcp.git
+cd audiototext-mcp
+pip install ".[local]"
 ```
 
-The package can also use the OpenAI backend:
+To use the OpenAI transcription API instead:
 
 ```bash
-pip install "audiototext-mcp[api]"
+pip install ".[api]"
+```
+
+## Install from PyPI
+
+After the package is published to PyPI, install it directly:
+
+```bash
+pip install "audio-transcription-mcp[local]"
+```
+
+For the OpenAI transcription API:
+
+```bash
+pip install "audio-transcription-mcp[api]"
 ```
 
 ## Run
 
 ```bash
-audiototext-mcp
+audio-transcription-mcp
 ```
+
+For backward compatibility, `audiototext-mcp` remains available as an alias.
 
 The server uses MCP stdio transport. Configure the command in an MCP client such as Claude Desktop, Cursor, or another compatible host:
 
 ```json
 {
   "mcpServers": {
-    "audiototext": {
-      "command": "audiototext-mcp"
+    "audio-transcription": {
+      "command": "audio-transcription-mcp"
     }
   }
 }
@@ -45,9 +65,9 @@ The server uses MCP stdio transport. Configure the command in an MCP client such
 
 The server reads local files, so only configure it in clients you trust. API keys should preferably be supplied through `OPENAI_API_KEY` rather than tool arguments.
 
-## Browser-based alternatives
+## Verify
 
-For browser-based transcription workflows, [MP3 to Text](https://mp3totext.io) is suitable for MP3 files, while [MP4 to Text](https://mp4totext.ai) is designed for MP4 video transcription.
+After adding the server to an MCP client, call `transcribe_file` with a readable local audio or video file path. A successful response contains the detected language, full transcript, and timestamped segments.
 
 ## License
 
