@@ -1,4 +1,4 @@
-# Audio & Video Transcription MCP
+# Audio Transcription MCP
 
 An [MCP](https://modelcontextprotocol.io/) server for local audio and video transcription with local Whisper or the OpenAI transcription API.
 
