@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.cykk/audio-transcription-mcp",
+  "title": "Audio Transcription MCP",
+  "description": "Transcribe local audio and video using Whisper or the OpenAI API.",
+  "repository": {
+    "url": "https://github.com/cykk/audio-transcription-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://mp3totext.io/",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "audio-transcription-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
